@@ -16,18 +16,6 @@
                         <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                         <div class="toggle-expand-content" data-content="pageMenu">
                             <ul class="nk-block-tools g-3">
-                                <li>
-                                    <div class="drodown">
-                                        <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-toggle="dropdown"><em class="d-none d-sm-inline icon ni ni-filter-alt"></em><span>Filtered By</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <ul class="link-list-opt no-bdr">
-                                                <li><a href="#"><span>Open</span></a></li>
-                                                <li><a href="#"><span>Closed</span></a></li>
-                                                <li><a href="#"><span>Onhold</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
                                 <li class="nk-block-tools-opt"><a href="{{ url('add-account')}}" class="btn btn-primary"><em class="icon ni ni-plus"></em><span>Add Account</span></a></li>
                             </ul>
                         </div>
@@ -51,22 +39,14 @@
                                     <th class="nk-tb-col"><span class="sub-text">ID</span></th>
                                     <th class="nk-tb-col tb-col-xxl"><span class="sub-text">Account UserName</span></th>
                                     <th class="nk-tb-col tb-col-lg"><span class="sub-text">Password</span></th>
-                                    <th class="nk-tb-col tb-col-lg"><span class="sub-text">Created_at</span></th>
-                                    <th class="nk-tb-col nk-tb-col-tools text-right">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-xs btn-trigger btn-icon dropdown-toggle mr-n1" data-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-more-h"></em></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <ul class="link-list-opt no-bdr">
-                                                    <li><a href="#"><em class="icon ni ni-check-round-cut"></em><span>Mark As Done</span></a></li>
-                                                    <li><a href="#"><em class="icon ni ni-archive"></em><span>Mark As Archive</span></a></li>
-                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Projects</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    <th class="nk-tb-col tb-col-lg"><span class="sub-text">Created at</span></th>
+                                    <th class="nk-tb-col tb-col-lg"><span class="sub-text">Action</span></th>
                                 </tr><!-- .nk-tb-item -->
                             </thead>
                             <tbody>
+                                <?php
+                                $count = 1;
+                                ?>
                                 @foreach($accounts as $account)
                                 <tr class="nk-tb-item">
                                     <td class="nk-tb-col nk-tb-col-check">
@@ -76,14 +56,14 @@
                                         </div>
                                     </td>
                                     <td class="nk-tb-col">
-                                        <a href="html/apps-kanban.html" class="project-title">
+                                        <a class="project-title">
                                             <div class="project-info">
                                                 <h6 class="title">1</h6>
                                             </div>
                                         </a>
                                     </td>
                                     <td class="nk-tb-col">
-                                        <a href="html/apps-kanban.html" class="project-title">
+                                        <a class="project-title">
                                             <div class="project-info">
                                                 <h6 class="title">{{ $account->username}}</h6>
                                             </div>
@@ -99,10 +79,10 @@
                                         <ul class="nk-tb-actions gx-1">
                                             <li>
                                                 <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                    <a class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <ul class="link-list-opt no-bdr">
-                                                            <li><a href=""><em class="icon ni ni-eye"></em><span>View Account</span></a></li>
+                                                            <li><a data-toggle="modal" data-target="#basicModal{{$count}}"><em class="icon ni ni-eye"></em><span>View Account</span></a></li>
                                                             <li><a href="{{ url('/edit-account', $account->id)}}"><em class="icon ni ni-edit"></em><span>Edit Account</span></a></li>
                                                         </ul>
                                                     </div>
@@ -111,6 +91,43 @@
                                         </ul>
                                     </td>
                                 </tr><!-- .nk-tb-item -->
+                                
+                                <div class="modal fade" id="basicModal{{$count}}" tabindex="-{{$count}}" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="card-inner card-inner-lg">
+                                            <div class="nk-block">
+                                                <div class="nk-data data-list">
+                                                    <div class="data-head">
+                                                        <h6 class="overline-title">Information Account " {{ $account->username}} "</h6>
+                                                    </div>
+                                                    <div class="data-item">
+                                                        <div class="data-col">
+                                                            <span class="data-label">Account Name</span>
+                                                            <span class="data-value">{{ $account->username}}</span>
+                                                        </div>
+                                                    </div><!-- data-item -->
+                                                    <div class="data-item">
+                                                        <div class="data-col">
+                                                            <span class="data-label">Password</span>
+                                                            <span class="data-value">{{ $account->password}}</span>
+                                                        </div>
+                                                    </div><!-- data-item -->
+                                                    <div class="data-item">
+                                                        <div class="data-col">
+                                                            <span class="data-label">Created at</span>
+                                                            <span class="data-value">{{ $account->created_at}}</span>
+                                                        </div>
+                                                    </div><!-- data-item -->
+                                                </div><!-- data-list -->
+                                            </div><!-- .nk-block -->
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <?php
+                                $count = $count + 1;
+                                ?>
                                 @endforeach
                             </tbody>
                         </table><!-- .nk-tb-list -->

@@ -19,4 +19,9 @@ class Domain extends Model
         return $this->hasOne('App\Client','id','id_client');
 
     }
+    
+    public function provider(){
+        return $this->hasOne('App\Provider','id','id_provider');
+
+    }
 }

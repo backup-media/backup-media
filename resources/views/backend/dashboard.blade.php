@@ -275,19 +275,7 @@
                                         </div>
                                     </div>
                                     <div class="nk-tb-col tb-col-md">
-                                        <span class="tb-sub"{{ $v_last5project->created_at}}</span>
-                                    </div>
-                                    <div class="nk-tb-col nk-tb-col-action">
-                                        <div class="dropdown">
-                                            <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
-                                                <ul class="link-list-plain">
-                                                    <li><a href="#">View</a></li>
-                                                    <li><a href="#">Invoice</a></li>
-                                                    <li><a href="#">Print</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        <span class="tb-lead">{{ $v_last5project->created_at}}</span>
                                     </div>
                                 </div>
                                 @endforeach

@@ -76,24 +76,6 @@
                                     <h6 class="overline-title overline-title-sap"><span>OR</span></h6>
                                 </div>
                             </div><!-- .nk-block -->
-                            <div class="nk-block nk-auth-footer">
-                                <div class="nk-block-between">
-                                    <ul class="nav nav-sm">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Terms & Condition</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Privacy Policy</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Help</a>
-                                        </li>
-                                    </ul><!-- .nav -->
-                                </div>
-                                <div class="mt-3">
-                                    <p>&copy; <?php echo date("Y"); ?>. All Rights Reserved.</p>
-                                </div>
-                            </div><!-- .nk-block -->
                         </div><!-- .nk-split-content -->
                         <div class="nk-split-content nk-split-stretch bg-lighter d-flex toggle-break-lg toggle-slide toggle-slide-right" data-content="athPromo" data-toggle-screen="lg" data-toggle-overlay="true">
                             <div class="slider-wrap w-100 w-max-550px p-3 p-sm-5 m-auto">

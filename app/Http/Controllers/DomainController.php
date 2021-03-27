@@ -38,7 +38,7 @@ class DomainController extends Controller
             $result[$url]['status'] = $status;
             $result[$url]['ssl'] = $ssl;
         }
-        $domains = Domain::with('account','client')->get();
+        $domains = Domain::with('account','client','provider')->get();
 
         
         return view('backend.domaines.index', compact('domains','result'));

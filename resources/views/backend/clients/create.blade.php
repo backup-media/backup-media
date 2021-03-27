@@ -5,7 +5,7 @@
         <div class="components-preview wide-md mx-auto">
             <div class="nk-block-head nk-block-head-lg wide-sm">
                 <div class="nk-block-head-content">
-                    <div class="nk-block-head-sub"><a class="back-to" href="html/components.html"><em class="icon ni ni-arrow-left"></em><span>Dashboard</span></a></div>
+                    <div class="nk-block-head-sub"><a class="back-to" href="{{ url('/')}}"><em class="icon ni ni-arrow-left"></em><span>Dashboard</span></a></div>
                     <h2 class="nk-block-title fw-normal">Infomation Client</h2>
                 </div>
             </div><!-- .nk-block-head -->

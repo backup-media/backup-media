@@ -5,7 +5,7 @@
         <div class="components-preview wide-md mx-auto">
             <div class="nk-block-head nk-block-head-lg wide-sm">
                 <div class="nk-block-head-content">
-                    <div class="nk-block-head-sub"><a class="back-to" href="html/components.html"><em class="icon ni ni-arrow-left"></em><span>Dashboard</span></a></div>
+                    <div class="nk-block-head-sub"><a class="back-to" href="{{ url('/')}}"><em class="icon ni ni-arrow-left"></em><span>Dashboard</span></a></div>
                     <h2 class="nk-block-title fw-normal">Infomation Project</h2>
                 </div>
             </div><!-- .nk-block-head -->
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">Refe</label>
+                                        <label class="form-label" for="fv-full-name">Reference</label>
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control" id="fv-full-name" name="ref" required>
                                         </div>
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">files_link</label>
+                                        <label class="form-label" for="fv-full-name">Files link</label>
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control" id="fv-full-name" name="files_link" required>
                                         </div>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">github link</label>
+                                        <label class="form-label" for="fv-full-name">Github link</label>
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control" id="fv-full-name" name="github_link" required>
                                         </div>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">Date Expire</label>
+                                        <label class="form-label" for="fv-full-name">Date Expired</label>
                                         <div class="form-control-wrap">
                                             <input type="date" class="form-control" id="fv-full-name" name="date_expire" required>
                                         </div>

@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">Refe</label>
+                                        <label class="form-label" for="fv-full-name">Reference</label>
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control" id="fv-full-name" name="ref" value="{{ $project->ref}}" required>
                                         </div>
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">files_link</label>
+                                        <label class="form-label" for="fv-full-name">Files link</label>
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control" id="fv-full-name" name="files_link" value="{{ $project->files_link}}" required>
                                         </div>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">github link</label>
+                                        <label class="form-label" for="fv-full-name">Github link</label>
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control" id="fv-full-name" name="github_link" value="{{ $project->github_link}}" required>
                                         </div>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="fv-full-name">Date Expire</label>
+                                        <label class="form-label" for="fv-full-name">Date Expired</label>
                                         <div class="form-control-wrap">
                                             <input type="date" class="form-control" id="fv-full-name" name="date_expire" value="{{ $project->date_expire}}" required>
                                         </div>

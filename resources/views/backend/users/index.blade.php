@@ -8,26 +8,14 @@
                 <div class="nk-block-head-content">
                     <h3 class="nk-block-title page-title">List Users Verifed</h3>
                     <div class="nk-block-des text-soft">
-                        <p>You have total {{ $count_user}} projects.</p>
+                        <p>You have total {{ $count_user}} Users.</p>
                     </div>
                 </div><!-- .nk-block-head-content -->
                 <div class="nk-block-head-content">
                     <div class="toggle-wrap nk-block-tools-toggle">
-                        <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
+                        <a class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                         <div class="toggle-expand-content" data-content="pageMenu">
                             <ul class="nk-block-tools g-3">
-                                <li>
-                                    <div class="drodown">
-                                        <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-toggle="dropdown"><em class="d-none d-sm-inline icon ni ni-filter-alt"></em><span>Filtered By</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <ul class="link-list-opt no-bdr">
-                                                <li><a href="#"><span>Open</span></a></li>
-                                                <li><a href="#"><span>Closed</span></a></li>
-                                                <li><a href="#"><span>Onhold</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
                                 <li class="nk-block-tools-opt"><a href="{{ url('add-user')}}" class="btn btn-primary"><em class="icon ni ni-plus"></em><span>Add User</span></a></li>
                             </ul>
                         </div>
@@ -52,19 +40,7 @@
                                     <th class="nk-tb-col tb-col-xxl"><span class="sub-text">User Name</span></th>
                                     <th class="nk-tb-col tb-col-lg"><span class="sub-text">Email</span></th>
                                     <th class="nk-tb-col tb-col-lg"><span class="sub-text">Verfied Account</span></th>
-                                    <th class="nk-tb-col tb-col-lg"><span class="sub-text">Created_at</span></th>
-                                    <th class="nk-tb-col nk-tb-col-tools text-right">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-xs btn-trigger btn-icon dropdown-toggle mr-n1" data-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-more-h"></em></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <ul class="link-list-opt no-bdr">
-                                                    <li><a href="#"><em class="icon ni ni-check-round-cut"></em><span>Mark As Done</span></a></li>
-                                                    <li><a href="#"><em class="icon ni ni-archive"></em><span>Mark As Archive</span></a></li>
-                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Projects</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    <th class="nk-tb-col tb-col-lg"><span class="sub-text">Created at</span></th>
                                 </tr><!-- .nk-tb-item -->
                             </thead>
                             <tbody>
@@ -80,14 +56,14 @@
                                         </div>
                                     </td>
                                     <td class="nk-tb-col">
-                                        <a href="html/apps-kanban.html" class="project-title">
+                                        <a class="project-title">
                                             <div class="project-info">
                                                 <h6 class="title">{{ $count}}</h6>
                                             </div>
                                         </a>
                                     </td>
                                     <td class="nk-tb-col">
-                                        <a href="html/apps-kanban.html" class="project-title">
+                                        <a class="project-title">
                                             <div class="project-info">
                                                 <h6 class="title">{{ $user->name}}</h6>
                                             </div>
@@ -100,27 +76,11 @@
                                         <span>@if($user->email_verified_at==1) <span class="badge badge-dot badge-dot-xs badge-success">Verified</span>  @else <span class="badge badge-dot badge-dot-xs badge-danger">UnVerified</span>  @endif</span>
                                     </td>
                                     <td class="nk-tb-col">
-                                        <a href="html/apps-kanban.html" class="project-title">
+                                        <a class="project-title">
                                             <div class="project-info">
                                                 <h6 class="title">{{ $user->created_at}}</h6>
                                             </div>
                                         </a>
-                                    </td>
-                                    <td class="nk-tb-col nk-tb-col-tools">
-                                        <ul class="nk-tb-actions gx-1">
-                                            <li>
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li><a href="html/apps-kanban.html"><em class="icon ni ni-eye"></em><span>View User</span></a></li>
-                                                            <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit User</span></a></li>
-                                                            <li><a href="#"><em class="icon ni ni-check-round-cut"></em><span>Mark As Done</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
                                     </td>
                                 </tr><!-- .nk-tb-item -->
                                 <?php $count = $count + 1; ?>
