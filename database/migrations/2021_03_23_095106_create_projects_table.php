@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('ref');
             $table->string('files_link');
             $table->string('github_link');
+            $table->string('project_copy');
             $table->date('date_expire');
             $table->string('info');
             $table->timestamps();

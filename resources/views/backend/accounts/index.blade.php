@@ -7,10 +7,14 @@
             <div class="nk-block-between">
                 <div class="nk-block-head-content">
                     <h3 class="nk-block-title page-title">Accounts</h3>
-                    <div class="nk-block-des text-soft">
-                        <p>You have total 95 projects.</p>
-                    </div>
                 </div><!-- .nk-block-head-content -->
+                <div class="nk-block-head-content col-lg-6">
+                    <form action="{{ url('/accounts')}}" method="get" role="search">
+                        <span class="col-lg-9" style="display: -webkit-box">
+                        <input type="search" autocomplete="off" name="search" class="form-control" id="searchtxt" placeholder="search by Domain Name" value="{{ $search}}"/><button class="btn btn-primary" type="submit"><em class="icon ni ni-search"></em>Search</button>
+                        </span>
+                    </form>
+                </div>
                 <div class="nk-block-head-content">
                     <div class="toggle-wrap nk-block-tools-toggle">
                         <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
@@ -58,7 +62,7 @@
                                     <td class="nk-tb-col">
                                         <a class="project-title">
                                             <div class="project-info">
-                                                <h6 class="title">1</h6>
+                                                <h6 class="title">{{ $count}}</h6>
                                             </div>
                                         </a>
                                     </td>
