@@ -47,6 +47,7 @@ class ProjectController extends Controller
         $data['files_link'] = $request->files_link;
         $data['github_link'] = $request->github_link;
         $data['date_expire'] = $request->date_expire;
+        $data['project_copy'] = $request->project_copy;
         $data['info'] = $request->info;
 
         Project::insert($data);
@@ -85,9 +86,20 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, $id)
     {
-        //
+        $data = array();
+
+        $data['id_client'] = $request->id_client;
+        $data['name_project'] = $request->name_project;
+        $data['ref'] = $request->ref;
+        $data['files_link'] = $request->files_link;
+        $data['github_link'] = $request->github_link;
+        $data['date_expire'] = $request->date_expire;
+        $data['project_copy'] = $request->project_copy;
+        $data['info'] = $request->info;
+
+        Project::where('id',$id)->update($data);
     }
 
     /**

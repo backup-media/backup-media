@@ -25,8 +25,7 @@
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
                         <a href="{{url('/')}}" class="logo-link nk-sidebar-logo">
-                            <img class="{{ URL::to('/assets/logo-light logo-img') }}" src="{{ URL::to('/assets/./images/logo.png') }}" srcset="{{ URL::to('/assets/./images/logo2x.png 2x') }}" alt="logo">
-                            <img class="{{ URL::to('/assets/logo-dark logo-img') }}" src="{{ URL::to('/assets/./images/logo-dark.png') }}" srcset="{{ URL::to('/assets/./images/logo-dark2x.png 2x') }}" alt="logo-dark">
+                            <h2 style="text-align: center; color:white">Systeme</h2>
                         </a>
                     </div>
                     <div class="nk-menu-trigger mr-n2">
