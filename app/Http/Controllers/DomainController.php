@@ -18,7 +18,7 @@ class DomainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $domaines = Domain::with('account','client')->get()->toArray();
 
@@ -38,10 +38,20 @@ class DomainController extends Controller
             $result[$url]['status'] = $status;
             $result[$url]['ssl'] = $ssl;
         }
-        $domains = Domain::with('account','client','provider')->get();
+
+        $search = $request->search;
+
+        $domains = Domain::with('account','client','provider');
+
+        if($request->has('search')){
+            $domains = $domains->where('domain_url','LIKE','%'.$search.'%'); 
+        }
+
+        $domains = $domains->get();
+        
 
         
-        return view('backend.domaines.index', compact('domains','result'));
+        return view('backend.domaines.index', compact('domains','result', 'search'));
     }
 
   

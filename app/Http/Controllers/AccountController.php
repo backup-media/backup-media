@@ -12,10 +12,19 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $accounts = Account::get();
-        return view('backend.accounts.index', compact('accounts'));
+
+        $search = $request->search;
+
+        if($request->has('search')){
+            $accounts = Account::where('username','LIKE','%'.$search.'%')->get(); 
+        }else{
+            $accounts = Account::get();
+        }
+
+        
+        return view('backend.accounts.index', compact('accounts', 'search'));
     }
 
     /**
