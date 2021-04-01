@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/save-server','ServerController@store');
 Route::get('/edit-server/{id}','ServerController@edit');
 Route::post('/update-server/{id}','ServerController@update');
 
-//client
+//clientj
 
 Route::get('/clients','ClientController@index');
 Route::get('/add-client','ClientController@create');
