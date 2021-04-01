@@ -8,12 +8,19 @@
                 <div class="nk-block-head-content">
                     <h3 class="nk-block-title page-title">Domains</h3>
                 </div><!-- .nk-block-head-content -->
+                <div class="nk-block-head-content col-lg-6">
+                    <form action="{{ url('/domains')}}" method="get" role="search">
+                        <span class="col-lg-9" style="display: -webkit-box">
+                        <input type="search" autocomplete="off" name="search" class="form-control" id="searchtxt" placeholder="search by Domain Name" value="{{ $search}}"/><button class="btn btn-primary" type="submit"><em class="icon ni ni-search"></em>Search</button>
+                        </span>
+                    </form>
+                </div>
                 <div class="nk-block-head-content">
                     <div class="toggle-wrap nk-block-tools-toggle">
                         <a class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                         <div class="toggle-expand-content" data-content="pageMenu">
                             <ul class="nk-block-tools g-3">
-                                <li class="nk-block-tools-opt"><a href="{{ url('add-provider')}}" class="btn btn-primary"><em class="icon ni ni-plus"></em><span>Add Domain</span></a></li>
+                                <li class="nk-block-tools-opt"><a href="{{ url('add-provider')}}" class="searchtxt btn btn-primary"><em class="icon ni ni-plus"></em><span>Add Domain</span></a></li>
                             </ul>
                         </div>
                     </div><!-- .toggle-wrap -->
@@ -238,6 +245,19 @@
         </div><!-- .nk-block -->
     </div>
 </div>
-
+<script>
+    $(document).ready(function(){
+    $("#searchtxt").keyup(function(){
+    var str=  $("#searchtxt").val();
+    if(str == "") {
+    $( "#Hintdate" ).html("<b>Blogs information will be show here...</b>");
+    }else {
+    $.get( "{{ url('domains?search=') }}"+str, function( data ) {
+    $( "#Hintdate" ).html( data );
+    });
+    }
+    });
+    });
+</script>
 
 @endsection
